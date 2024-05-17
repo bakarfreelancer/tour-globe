@@ -33,6 +33,18 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
+                @if(!Auth::check())
+                <li><a href="{{route('login')}}">Login</a></li>
+                @endif
+                
+                @if(Auth::check())
+                <li>
+                    <a href="#" id="logout">Logout</a>
+                    <form id="logoutForm" action="{{route('logout')}}" method="post">
+                    @csrf
+                    </form>
+                </li>
+                @endif
             </ul>
 
             <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
@@ -42,3 +54,10 @@
         </div>
     </div>
 </nav>
+
+<script>
+    // Logout
+    document.getElementById('logout').addEventListener('click', function () {
+        document.getElementById('logoutForm').submit();
+    })
+</script>

@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+/startbootstrap-sb-admin-gh-pages
+/tour-1.0.0
