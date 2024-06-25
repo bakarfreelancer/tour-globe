@@ -19,3 +19,4 @@ Route::controller(AuthController::class)->group(function(){
 Route::get('/dashboard', [DashboardController::class, 'view'])->name('dashboard');
 
 Route::get('/dashboard/location/create', [LocationController::class, 'create'])->name('location.create');
+Route::post('/dashboard/location/create', [LocationController::class, 'store'])->name('location.store');

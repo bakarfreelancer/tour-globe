@@ -14,5 +14,5 @@ class Location extends Model
         'country',
         'picture',
         'description',
-    ]
+    ];
 }
